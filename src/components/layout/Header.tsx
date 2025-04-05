@@ -7,6 +7,11 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Moon, Sun, ChevronDown, Menu, X } from 'lucide-react';
 
+type LanguageOption = {
+  code: 'en' | 'es' | 'ru' | 'ua';
+  label: string;
+};
+
 const Header = () => {
   const { language, setLanguage, translations } = useLanguage();
   const { theme, toggleTheme } = useTheme();
@@ -21,7 +26,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const languageOptions = [
+  const languageOptions: LanguageOption[] = [
     { code: 'en', label: 'English' },
     { code: 'es', label: 'Español' },
     { code: 'ru', label: 'Русский' },
