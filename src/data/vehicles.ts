@@ -46,7 +46,7 @@ const vehicles: Vehicle[] = [
     description:
       "This Toyota RAV4 is in excellent condition with low mileage and all the modern features you need. Perfect for families and outdoor adventures.",
     images: [
-      "images/2023-toyota-ravr-trd-off-road-1404x1112.jpg",
+      "/images/2023-toyota-ravr-trd-off-road-1404x1112.jpg",
       "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1549925249-dd782ff8a088?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
@@ -146,10 +146,10 @@ const vehicles: Vehicle[] = [
     description:
       "This Ford F-150 is the perfect work truck with power and capability to handle any job. Features include towing package and 4WD for off-road adventures.",
     images: [
-      "images/2021-ford-f-150-silver-1.jpg",
-      "images/2021-ford-f-150-silver-2.jpg",
-      "images/2021-ford-f-150-silver-3.jpeg",
-      "images/2021-ford-f-150-silver-4.avif",
+      "/images/2021-ford-f-150-silver-1.jpg",
+      "/images/2021-ford-f-150-silver-2.jpg",
+      "/images/2021-ford-f-150-silver-3.jpeg",
+      "/images/2021-ford-f-150-silver-4.avif",
     ],
     isFeatured: false,
     isNew: false,
@@ -179,10 +179,10 @@ const vehicles: Vehicle[] = [
     description:
       "The Chevrolet Equinox offers a comfortable ride with plenty of cargo space. Great fuel economy and advanced safety features make this SUV a smart choice.",
     images: [
-      "images/2022-Chevrolet-Equinox-blue-1.jpg",
-      "images/2022-Chevrolet-Equinox-blue-2.jpg",
-      "images/2022-Chevrolet-Equinox-blue-3.avif",
-      "images/2022-Chevrolet-Equinox-blue-4.jpg",
+      "/images/2022-Chevrolet-Equinox-blue-1.jpg",
+      "/images/2022-Chevrolet-Equinox-blue-2.jpg",
+      "/images/2022-Chevrolet-Equinox-blue-3.avif",
+      "/images/2022-Chevrolet-Equinox-blue-4.jpg",
     ],
     isFeatured: false,
     isNew: true,
@@ -212,10 +212,10 @@ const vehicles: Vehicle[] = [
     description:
       "Luxury meets performance in this BMW 3 Series. Experience German engineering with a smooth ride, powerful engine, and premium interior features.",
     images: [
-      "images/2022-BMW-3-series-blue-1.webp",
-      "images/2022-BMW-3-series-blue-2.jpg",
-      "images/2022-BMW-3-series-blue-3.jpg",
-      "images/2022-BMW-3-series-blue-4.avif",
+      "/images/2022-BMW-3-series-blue-1.webp",
+      "/images/2022-BMW-3-series-blue-2.jpg",
+      "/images/2022-BMW-3-series-blue-3.jpg",
+      "/images/2022-BMW-3-series-blue-4.avif",
     ],
     isFeatured: false,
     isNew: true,
@@ -369,7 +369,7 @@ const vehicles: Vehicle[] = [
     description:
       "This Volkswagen Tiguan offers European styling with practical features. Third-row seating makes this a versatile SUV for families and adventure seekers.",
     images: [
-      "images/Volkswagen-Tiguan-white.jpg",
+      "/images/Volkswagen-Tiguan-white.jpg",
       "https://images.unsplash.com/photo-1577417006420-c59ab0bccb56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: false,
