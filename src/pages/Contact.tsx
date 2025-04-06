@@ -1,6 +1,7 @@
 
 import Layout from '@/components/layout/Layout';
 import ContactForm from '@/components/contact/ContactForm';
+import GoogleMap from '@/components/contact/GoogleMap';
 import { useLanguage } from '@/context/LanguageContext';
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 
@@ -76,17 +77,8 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-lg overflow-hidden shadow-md">
-                <iframe
-                  title="Dealership Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50470.00799294745!2d-122.46353168435732!3d37.77492951412471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1649789608553!5m2!1sen!2sus"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+              <div className="mt-6 rounded-lg overflow-hidden shadow-md h-[300px]">
+                <GoogleMap />
               </div>
             </div>
           </div>

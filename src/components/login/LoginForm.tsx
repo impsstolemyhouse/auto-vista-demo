@@ -1,15 +1,17 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const LoginForm = () => {
   const { translations } = useLanguage();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -25,8 +27,22 @@ const LoginForm = () => {
     setFormData((prev) => ({ ...prev, remember: checked }));
   };
 
+  const handleCaptchaChange = (value: string | null) => {
+    setCaptchaVerified(!!value);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!captchaVerified) {
+      toast({
+        title: "Verification required",
+        description: "Please complete the CAPTCHA verification",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsLoading(true);
 
     // Simulate login API call
@@ -38,6 +54,37 @@ const LoginForm = () => {
       setIsLoading(false);
     }, 1500);
   };
+
+  // Load reCAPTCHA script
+  useEffect(() => {
+    const loadScriptByURL = (id: string, url: string, callback: () => void) => {
+      const isScriptExist = document.getElementById(id);
+      
+      if (!isScriptExist) {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = url;
+        script.id = id;
+        script.onload = function () {
+          if (callback) callback();
+        };
+        document.body.appendChild(script);
+      }
+      
+      if (isScriptExist && callback) callback();
+    };
+    
+    // Load the reCAPTCHA script
+    loadScriptByURL("recaptcha-key", "https://www.google.com/recaptcha/api.js", function () {
+      console.log("reCAPTCHA script loaded");
+    });
+    
+    return () => {
+      // Cleanup - remove script
+      const scriptElement = document.getElementById("recaptcha-key");
+      if (scriptElement) document.body.removeChild(scriptElement);
+    };
+  }, []);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -92,12 +139,19 @@ const LoginForm = () => {
             {translations.login.forgot}
           </a>
         </div>
+        
+        <div className="flex justify-center my-4">
+          <ReCAPTCHA
+            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Test key, replace with your own in production
+            onChange={handleCaptchaChange}
+          />
+        </div>
       </div>
 
       <Button
         type="submit"
         className="w-full bg-dms-blue hover:bg-dms-blue-dark"
-        disabled={isLoading}
+        disabled={isLoading || !captchaVerified}
       >
         {isLoading ? (
           <span className="flex items-center">

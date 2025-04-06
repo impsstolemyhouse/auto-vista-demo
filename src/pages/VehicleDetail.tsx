@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -6,13 +5,15 @@ import VehicleGallery from '@/components/vehicles/VehicleGallery';
 import VehicleSpecs from '@/components/vehicles/VehicleSpecs';
 import VehicleFinanceCalculator from '@/components/vehicles/VehicleFinanceCalculator';
 import VehicleCard from '@/components/vehicles/VehicleCard';
+import Vehicle3DViewer from '@/components/vehicles/Vehicle3DViewer';
 import { Vehicle } from '@/data/vehicles';
 import vehicles from '@/data/vehicles';
 import { useLanguage } from '@/context/LanguageContext';
 import { formatCurrency, getRandomItems } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Calendar, DollarSign, MailOpen } from 'lucide-react';
+import { Calendar, DollarSign, MailOpen, View3d } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const VehicleDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -30,10 +31,21 @@ const VehicleDetail = () => {
       
       if (foundVehicle) {
         // Find similar vehicles (same make or body style)
+        // For demo purposes, only show vehicles that have 3D models
+        const validModelIds = ["2", "3", "4", "5", "6"];
         const similar = vehicles.filter(v => 
-          v.id !== id && (v.make === foundVehicle.make || v.bodyStyle === foundVehicle.bodyStyle)
+          v.id !== id && 
+          (v.make === foundVehicle.make || v.bodyStyle === foundVehicle.bodyStyle) && 
+          validModelIds.includes(v.id)
         );
-        setSimilarVehicles(getRandomItems(similar, 3));
+        
+        // If no similar vehicles found that have 3D models, use some that do have models
+        if (similar.length === 0) {
+          const modelVehicles = vehicles.filter(v => validModelIds.includes(v.id) && v.id !== id);
+          setSimilarVehicles(getRandomItems(modelVehicles, Math.min(3, modelVehicles.length)));
+        } else {
+          setSimilarVehicles(getRandomItems(similar, Math.min(3, similar.length)));
+        }
       }
       
       setLoading(false);
@@ -113,9 +125,20 @@ const VehicleDetail = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
-            {/* Vehicle Images */}
+            {/* Vehicle Media Tabs */}
             <div className="lg:col-span-2">
-              <VehicleGallery images={vehicle.images} make={vehicle.make} model={vehicle.model} />
+              <Tabs defaultValue="gallery" className="mb-6">
+                <TabsList className="grid w-full grid-cols-2 mb-2">
+                  <TabsTrigger value="gallery">Photo Gallery</TabsTrigger>
+                  <TabsTrigger value="3d">3D Model</TabsTrigger>
+                </TabsList>
+                <TabsContent value="gallery">
+                  <VehicleGallery images={vehicle.images} make={vehicle.make} model={vehicle.model} />
+                </TabsContent>
+                <TabsContent value="3d">
+                  <Vehicle3DViewer vehicleId={vehicle.id} make={vehicle.make} model={vehicle.model} />
+                </TabsContent>
+              </Tabs>
             </div>
 
             {/* Quick Actions */}
