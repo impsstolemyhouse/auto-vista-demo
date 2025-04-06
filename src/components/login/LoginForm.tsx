@@ -1,10 +1,9 @@
-
-import { useState, useEffect } from 'react';
-import { useLanguage } from '@/context/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Checkbox } from '@/components/ui/checkbox';
-import { useToast } from '@/hooks/use-toast';
+import { useState, useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useToast } from "@/hooks/use-toast";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const LoginForm = () => {
@@ -13,8 +12,8 @@ const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
     remember: false,
   });
 
@@ -33,7 +32,7 @@ const LoginForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!captchaVerified) {
       toast({
         title: "Verification required",
@@ -42,7 +41,7 @@ const LoginForm = () => {
       });
       return;
     }
-    
+
     setIsLoading(true);
 
     // Simulate login API call
@@ -59,7 +58,7 @@ const LoginForm = () => {
   useEffect(() => {
     const loadScriptByURL = (id: string, url: string, callback: () => void) => {
       const isScriptExist = document.getElementById(id);
-      
+
       if (!isScriptExist) {
         const script = document.createElement("script");
         script.type = "text/javascript";
@@ -70,15 +69,19 @@ const LoginForm = () => {
         };
         document.body.appendChild(script);
       }
-      
+
       if (isScriptExist && callback) callback();
     };
-    
+
     // Load the reCAPTCHA script
-    loadScriptByURL("recaptcha-key", "https://www.google.com/recaptcha/api.js", function () {
-      console.log("reCAPTCHA script loaded");
-    });
-    
+    loadScriptByURL(
+      "recaptcha-key",
+      "https://www.google.com/recaptcha/api.js",
+      function () {
+        console.log("reCAPTCHA script loaded");
+      }
+    );
+
     return () => {
       // Cleanup - remove script
       const scriptElement = document.getElementById("recaptcha-key");
@@ -132,17 +135,14 @@ const LoginForm = () => {
             </label>
           </div>
 
-          <a
-            href="#"
-            className="text-sm text-dms-blue hover:underline"
-          >
+          <a href="#" className="text-sm text-dms-blue hover:underline">
             {translations.login.forgot}
           </a>
         </div>
-        
+
         <div className="flex justify-center my-4">
           <ReCAPTCHA
-            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Test key, replace with your own in production
+            sitekey="6LfCDAorAAAAAPRLQArW4LBb9xO3Tw00J-BIKiLA" // Test key, replace with your own in production
             onChange={handleCaptchaChange}
           />
         </div>
@@ -155,9 +155,25 @@ const LoginForm = () => {
       >
         {isLoading ? (
           <span className="flex items-center">
-            <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            <svg
+              className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
             </svg>
             Processing...
           </span>
@@ -209,7 +225,7 @@ const LoginForm = () => {
       </div>
 
       <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-6">
-        {translations.login.noAccount}{' '}
+        {translations.login.noAccount}{" "}
         <a href="#" className="text-dms-blue hover:underline">
           {translations.login.register}
         </a>

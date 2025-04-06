@@ -1,23 +1,22 @@
-
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import Layout from '@/components/layout/Layout';
-import VehicleGallery from '@/components/vehicles/VehicleGallery';
-import VehicleSpecs from '@/components/vehicles/VehicleSpecs';
-import VehicleFinanceCalculator from '@/components/vehicles/VehicleFinanceCalculator';
-import VehicleCard from '@/components/vehicles/VehicleCard';
-import Vehicle3DViewer from '@/components/vehicles/Vehicle3DViewer';
-import { Vehicle } from '@/data/vehicles';
-import vehicles from '@/data/vehicles';
-import { useLanguage } from '@/context/LanguageContext';
-import { formatCurrency, getRandomItems } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { Calendar, DollarSign, MailOpen, View3d } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Layout from "@/components/layout/Layout";
+import VehicleGallery from "@/components/vehicles/VehicleGallery";
+import VehicleSpecs from "@/components/vehicles/VehicleSpecs";
+import VehicleFinanceCalculator from "@/components/vehicles/VehicleFinanceCalculator";
+import VehicleCard from "@/components/vehicles/VehicleCard";
+import Vehicle3DViewer from "@/components/vehicles/Vehicle3DViewer";
+import { Vehicle } from "@/data/vehicles";
+import vehicles from "@/data/vehicles";
+import { useLanguage } from "@/context/LanguageContext";
+import { formatCurrency, getRandomItems } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar, DollarSign, MailOpen } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Replace the invalid View3d import with a valid icon
-import { View } from 'lucide-react';
+import { View } from "lucide-react";
 
 const VehicleDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -30,28 +29,36 @@ const VehicleDetail = () => {
     // Simulate API fetch
     setLoading(true);
     setTimeout(() => {
-      const foundVehicle = vehicles.find(v => v.id === id);
+      const foundVehicle = vehicles.find((v) => v.id === id);
       setVehicle(foundVehicle || null);
-      
+
       if (foundVehicle) {
         // Find similar vehicles (same make or body style)
         // For demo purposes, only show vehicles that have 3D models
         const validModelIds = ["2", "3", "4", "5", "6"];
-        const similar = vehicles.filter(v => 
-          v.id !== id && 
-          (v.make === foundVehicle.make || v.bodyStyle === foundVehicle.bodyStyle) && 
-          validModelIds.includes(v.id)
+        const similar = vehicles.filter(
+          (v) =>
+            v.id !== id &&
+            (v.make === foundVehicle.make ||
+              v.bodyStyle === foundVehicle.bodyStyle) &&
+            validModelIds.includes(v.id)
         );
-        
+
         // If no similar vehicles found that have 3D models, use some that do have models
         if (similar.length === 0) {
-          const modelVehicles = vehicles.filter(v => validModelIds.includes(v.id) && v.id !== id);
-          setSimilarVehicles(getRandomItems(modelVehicles, Math.min(3, modelVehicles.length)));
+          const modelVehicles = vehicles.filter(
+            (v) => validModelIds.includes(v.id) && v.id !== id
+          );
+          setSimilarVehicles(
+            getRandomItems(modelVehicles, Math.min(3, modelVehicles.length))
+          );
         } else {
-          setSimilarVehicles(getRandomItems(similar, Math.min(3, similar.length)));
+          setSimilarVehicles(
+            getRandomItems(similar, Math.min(3, similar.length))
+          );
         }
       }
-      
+
       setLoading(false);
     }, 500);
   }, [id]);
@@ -137,10 +144,18 @@ const VehicleDetail = () => {
                   <TabsTrigger value="3d">3D Model</TabsTrigger>
                 </TabsList>
                 <TabsContent value="gallery">
-                  <VehicleGallery images={vehicle.images} make={vehicle.make} model={vehicle.model} />
+                  <VehicleGallery
+                    images={vehicle.images}
+                    make={vehicle.make}
+                    model={vehicle.model}
+                  />
                 </TabsContent>
                 <TabsContent value="3d">
-                  <Vehicle3DViewer vehicleId={vehicle.id} make={vehicle.make} model={vehicle.model} />
+                  <Vehicle3DViewer
+                    vehicleId={vehicle.id}
+                    make={vehicle.make}
+                    model={vehicle.model}
+                  />
                 </TabsContent>
               </Tabs>
             </div>
@@ -149,7 +164,9 @@ const VehicleDetail = () => {
             <div className="lg:col-span-1">
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-6">
                 <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-                  <h3 className="font-semibold text-lg">{translations.vehicle.cta.title}</h3>
+                  <h3 className="font-semibold text-lg">
+                    {translations.vehicle.cta.title}
+                  </h3>
                 </div>
                 <div className="p-4 space-y-4">
                   <Button className="w-full bg-dms-blue hover:bg-dms-blue-dark">
@@ -176,7 +193,9 @@ const VehicleDetail = () => {
               {/* Vehicle Description */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden mb-6">
                 <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-                  <h3 className="font-semibold text-lg">{translations.vehicle.overview}</h3>
+                  <h3 className="font-semibold text-lg">
+                    {translations.vehicle.overview}
+                  </h3>
                 </div>
                 <div className="p-4">
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -188,16 +207,28 @@ const VehicleDetail = () => {
               {/* Vehicle Features */}
               <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                 <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-                  <h3 className="font-semibold text-lg">{translations.vehicle.features}</h3>
+                  <h3 className="font-semibold text-lg">
+                    {translations.vehicle.features}
+                  </h3>
                 </div>
                 <div className="p-4">
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
                     {vehicle.features.map((feature, index) => (
                       <li key={index} className="flex items-center">
-                        <svg className="h-4 w-4 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        <svg
+                          className="h-4 w-4 text-green-500 mr-2"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
+                          />
                         </svg>
-                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                        <span className="text-gray-700 dark:text-gray-300">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -213,7 +244,9 @@ const VehicleDetail = () => {
           {/* Similar Vehicles */}
           {similarVehicles.length > 0 && (
             <div className="mt-12">
-              <h2 className="text-2xl font-bold mb-6">{translations.vehicle.similar}</h2>
+              <h2 className="text-2xl font-bold mb-6">
+                {translations.vehicle.similar}
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {similarVehicles.map((vehicle) => (
                   <VehicleCard key={vehicle.id} vehicle={vehicle} />
