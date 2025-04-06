@@ -82,7 +82,7 @@ const vehicles: Vehicle[] = [
       "/images/2022-honda-accord-white-1.jpg",
       "/images/2022-honda-accord-white-2.webp",
       "/images/2022-honda-accord-white-3.webp",
-      "/images/2022-honda-accord-white-3.webp",
+      "/images/2022-honda-accord-white-4.jpg",
     ],
     isFeatured: true,
     isNew: false,
