@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
@@ -14,6 +15,9 @@ import { Button } from '@/components/ui/button';
 import { Calendar, DollarSign, MailOpen, View3d } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+// Replace the invalid View3d import with a valid icon
+import { View } from 'lucide-react';
 
 const VehicleDetail = () => {
   const { id } = useParams<{ id: string }>();

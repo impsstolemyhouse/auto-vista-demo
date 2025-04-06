@@ -36,12 +36,12 @@ const Vehicle3DViewer = ({ vehicleId, make, model }: Vehicle3DViewerProps) => {
           frameBorder="0"
           allow="autoplay; fullscreen; xr-spatial-tracking"
           allowFullScreen
-          mozallowfullscreen="true"
-          webkitallowfullscreen="true"
-          xr-spatial-tracking="true"
-          execution-while-out-of-viewport="true"
-          execution-while-not-rendered="true"
-          web-share="true"
+          data-mozallowfullscreen="true"
+          data-webkitallowfullscreen="true"
+          data-xr-spatial-tracking="true"
+          data-execution-while-out-of-viewport="true"
+          data-execution-while-not-rendered="true"
+          data-web-share="true"
           src={modelUrl}
         ></iframe>
       </div>
