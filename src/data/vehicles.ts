@@ -1,4 +1,3 @@
-
 export interface Vehicle {
   id: string;
   make: string;
@@ -42,17 +41,18 @@ const vehicles: Vehicle[] = [
       "Bluetooth",
       "Sunroof",
       "Navigation System",
-      "Heated Seats"
+      "Heated Seats",
     ],
-    description: "This Toyota RAV4 is in excellent condition with low mileage and all the modern features you need. Perfect for families and outdoor adventures.",
+    description:
+      "This Toyota RAV4 is in excellent condition with low mileage and all the modern features you need. Perfect for families and outdoor adventures.",
     images: [
-      "https://images.unsplash.com/photo-1581740394933-8d34ddab07c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      "images/2023-toyota-ravr-trd-off-road-1404x1112.jpg",
       "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
       "https://images.unsplash.com/photo-1549925249-dd782ff8a088?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: true,
-    isNew: true
+    isNew: true,
   },
   {
     id: "2",
@@ -74,16 +74,18 @@ const vehicles: Vehicle[] = [
       "Backup Camera",
       "Bluetooth",
       "Adaptive Cruise Control",
-      "Lane Keeping Assist"
+      "Lane Keeping Assist",
     ],
-    description: "This Honda Accord offers exceptional fuel economy and a smooth ride. Loaded with technology and safety features for a comfortable driving experience.",
+    description:
+      "This Honda Accord offers exceptional fuel economy and a smooth ride. Loaded with technology and safety features for a comfortable driving experience.",
     images: [
-      "https://images.unsplash.com/photo-1617469165786-8007eda3caa7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1563720223523-445be7247bd5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1541443131876-44b03de101c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "/images/2022-honda-accord-white-1.jpg",
+      "/images/2022-honda-accord-white-2.webp",
+      "/images/2022-honda-accord-white-3.webp",
+      "/images/2022-honda-accord-white-3.webp",
     ],
     isFeatured: true,
-    isNew: false
+    isNew: false,
   },
   {
     id: "3",
@@ -105,16 +107,18 @@ const vehicles: Vehicle[] = [
       "Heated Seats",
       "Navigation",
       "Glass Roof",
-      "Supercharging Capability"
+      "Supercharging Capability",
     ],
-    description: "Experience the future of driving with this Tesla Model 3. Features include autopilot capabilities, premium interior, and incredible electric performance.",
+    description:
+      "Experience the future of driving with this Tesla Model 3. Features include autopilot capabilities, premium interior, and incredible electric performance.",
     images: [
-      "https://images.unsplash.com/photo-1561580125-028ee3bd62eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1536700503339-1e4b06520771?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "/images/2023-tesla-model3-1.webp",
+      "/images/2023-tesla-model3-2.jpg",
+      "/images/2023-tesla-model3-3.webp",
+      "/images/2023-tesla-model3-4.avif",
     ],
     isFeatured: true,
-    isNew: true
+    isNew: true,
   },
   {
     id: "4",
@@ -137,15 +141,18 @@ const vehicles: Vehicle[] = [
       "Bluetooth",
       "Touchscreen Display",
       "Apple CarPlay",
-      "Android Auto"
+      "Android Auto",
     ],
-    description: "This Ford F-150 is the perfect work truck with power and capability to handle any job. Features include towing package and 4WD for off-road adventures.",
+    description:
+      "This Ford F-150 is the perfect work truck with power and capability to handle any job. Features include towing package and 4WD for off-road adventures.",
     images: [
-      "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1609963129315-11222c1cf917?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "images/2021-ford-f-150-silver-1.jpg",
+      "images/2021-ford-f-150-silver-2.jpg",
+      "images/2021-ford-f-150-silver-3.jpeg",
+      "images/2021-ford-f-150-silver-4.avif",
     ],
     isFeatured: false,
-    isNew: false
+    isNew: false,
   },
   {
     id: "5",
@@ -167,15 +174,18 @@ const vehicles: Vehicle[] = [
       "Backup Camera",
       "Bluetooth",
       "Heated Seats",
-      "Remote Start"
+      "Remote Start",
     ],
-    description: "The Chevrolet Equinox offers a comfortable ride with plenty of cargo space. Great fuel economy and advanced safety features make this SUV a smart choice.",
+    description:
+      "The Chevrolet Equinox offers a comfortable ride with plenty of cargo space. Great fuel economy and advanced safety features make this SUV a smart choice.",
     images: [
-      "https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1578637387939-43c525550085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "images/2022-Chevrolet-Equinox-blue-1.jpg",
+      "images/2022-Chevrolet-Equinox-blue-2.jpg",
+      "images/2022-Chevrolet-Equinox-blue-3.avif",
+      "images/2022-Chevrolet-Equinox-blue-4.jpg",
     ],
     isFeatured: false,
-    isNew: true
+    isNew: true,
   },
   {
     id: "6",
@@ -197,15 +207,18 @@ const vehicles: Vehicle[] = [
       "Sunroof",
       "Premium Sound System",
       "Heated Seats",
-      "Parking Sensors"
+      "Parking Sensors",
     ],
-    description: "Luxury meets performance in this BMW 3 Series. Experience German engineering with a smooth ride, powerful engine, and premium interior features.",
+    description:
+      "Luxury meets performance in this BMW 3 Series. Experience German engineering with a smooth ride, powerful engine, and premium interior features.",
     images: [
-      "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1602786195490-c785a218df40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "images/2022-BMW-3-series-blue-1.webp",
+      "images/2022-BMW-3-series-blue-2.jpg",
+      "images/2022-BMW-3-series-blue-3.jpg",
+      "images/2022-BMW-3-series-blue-4.avif",
     ],
     isFeatured: false,
-    isNew: true
+    isNew: true,
   },
   {
     id: "7",
@@ -227,15 +240,16 @@ const vehicles: Vehicle[] = [
       "Backup Camera",
       "Bluetooth",
       "Blind Spot Monitoring",
-      "Lane Keeping Assist"
+      "Lane Keeping Assist",
     ],
-    description: "The redesigned Hyundai Tucson offers a bold look with practical features. Advanced safety technology and comfortable interior make this a great family SUV.",
+    description:
+      "The redesigned Hyundai Tucson offers a bold look with practical features. Advanced safety technology and comfortable interior make this a great family SUV.",
     images: [
       "https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1620894487623-c20872937d29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "https://images.unsplash.com/photo-1620894487623-c20872937d29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: false,
-    isNew: false
+    isNew: false,
   },
   {
     id: "8",
@@ -257,15 +271,16 @@ const vehicles: Vehicle[] = [
       "Navigation System",
       "Backup Camera",
       "Towing Package",
-      "Off-Road Package"
+      "Off-Road Package",
     ],
-    description: "This Jeep Grand Cherokee combines luxury and off-road capability. Perfect for adventures with a comfortable interior and rugged exterior.",
+    description:
+      "This Jeep Grand Cherokee combines luxury and off-road capability. Perfect for adventures with a comfortable interior and rugged exterior.",
     images: [
-      "https://images.unsplash.com/photo-1517994112540-009e58dd2a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "/images/Used-2021-Jeep-Grand-Cherokee-Trackhawk-15.webp",
+      "https://images.unsplash.com/photo-1546614042-7df3c24c9e5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: false,
-    isNew: false
+    isNew: false,
   },
   {
     id: "9",
@@ -287,15 +302,16 @@ const vehicles: Vehicle[] = [
       "Panoramic Sunroof",
       "Premium Sound System",
       "360-Degree Camera",
-      "Adaptive Cruise Control"
+      "Adaptive Cruise Control",
     ],
-    description: "Experience luxury and performance with this Audi Q5. The premium interior, powerful engine, and advanced technology create an exceptional driving experience.",
+    description:
+      "Experience luxury and performance with this Audi Q5. The premium interior, powerful engine, and advanced technology create an exceptional driving experience.",
     images: [
-      "https://images.unsplash.com/photo-1606664922997-576db57115e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1604055999888-698a336cf087?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "/images/audi-q5.avif",
+      "https://images.unsplash.com/photo-1604055999888-698a336cf087?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: true,
-    isNew: true
+    isNew: true,
   },
   {
     id: "10",
@@ -317,15 +333,16 @@ const vehicles: Vehicle[] = [
       "Backup Camera",
       "Bluetooth",
       "Heated Seats",
-      "Blind Spot Monitoring"
+      "Blind Spot Monitoring",
     ],
-    description: "The Mazda CX-5 combines sporty handling with elegant design. Premium features and a comfortable interior make this SUV stand out from the competition.",
+    description:
+      "The Mazda CX-5 combines sporty handling with elegant design. Premium features and a comfortable interior make this SUV stand out from the competition.",
     images: [
       "https://images.unsplash.com/photo-1609521263047-f8f205293f24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1533468432434-200de3b5d6d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "https://images.unsplash.com/photo-1533468432434-200de3b5d6d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: false,
-    isNew: false
+    isNew: false,
   },
   {
     id: "11",
@@ -347,15 +364,16 @@ const vehicles: Vehicle[] = [
       "Backup Camera",
       "Bluetooth",
       "Third-Row Seating",
-      "Panoramic Sunroof"
+      "Panoramic Sunroof",
     ],
-    description: "This Volkswagen Tiguan offers European styling with practical features. Third-row seating makes this a versatile SUV for families and adventure seekers.",
+    description:
+      "This Volkswagen Tiguan offers European styling with practical features. Third-row seating makes this a versatile SUV for families and adventure seekers.",
     images: [
-      "https://images.unsplash.com/photo-1610902254123-164ba5cc26dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1577417006420-c59ab0bccb56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "images/Volkswagen-Tiguan-white.jpg",
+      "https://images.unsplash.com/photo-1577417006420-c59ab0bccb56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: false,
-    isNew: true
+    isNew: true,
   },
   {
     id: "12",
@@ -377,16 +395,17 @@ const vehicles: Vehicle[] = [
       "Android Auto",
       "Backup Camera",
       "Roof Rails",
-      "Eyesight Driver Assist"
+      "Eyesight Driver Assist",
     ],
-    description: "The Subaru Outback is built for adventure with standard all-wheel drive and ample cargo space. Reliable and capable on any terrain or weather condition.",
+    description:
+      "The Subaru Outback is built for adventure with standard all-wheel drive and ample cargo space. Reliable and capable on any terrain or weather condition.",
     images: [
-      "https://images.unsplash.com/photo-1625058929988-8da73293400c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1617099443042-a340ea2f5a3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+      "/images/Subaru-Outback-green.jpg",
+      "https://images.unsplash.com/photo-1617099443042-a340ea2f5a3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
     ],
     isFeatured: false,
-    isNew: false
-  }
+    isNew: false,
+  },
 ];
 
 export default vehicles;
