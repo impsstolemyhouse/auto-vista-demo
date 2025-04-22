@@ -142,7 +142,7 @@ const LoginForm = () => {
 
         <div className="flex justify-center my-4">
           <ReCAPTCHA
-            sitekey="6LfCDAorAAAAAPRLQArW4LBb9xO3Tw00J-BIKiLA" // Test key, replace with your own in production
+            sitekey="6LfCDAorAAAAAPRLQArW4LBb9xO3Tw00J-BIKiLA" 
             onChange={handleCaptchaChange}
           />
         </div>
