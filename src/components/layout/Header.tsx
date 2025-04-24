@@ -49,12 +49,24 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <span className="text-xl font-bold text-dms-blue dark:text-white">
+              {/* <span className="text-xl font-bold text-dms-blue dark:text-white">
                 MCAD
               </span>
               <span className="ml-1 text-xs text-gray-500 dark:text-gray-400">
                 LLC
-              </span>
+              </span> */}
+              <>
+                <img
+                  src="/images/NWM logo.png"
+                  alt="Logo"
+                  className="block dark:hidden h-12"
+                />
+                <img
+                  src="/images/NWM logo-white.png"
+                  alt="Logo (Dark)"
+                  className="hidden dark:block h-12"
+                />
+              </>
             </Link>
           </div>
 
